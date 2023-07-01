@@ -5,22 +5,42 @@ env:
     device: lavender
     
 task:
-  name: Build
-  skip: $CIRRUS_BRANCH == 'ppp'
-  only_if: $CIRRUS_REPO_OWNER == 'My-builder'
+  name: "Snx-S"
   timeout_in: 4h
-  persistent_worker:
-    labels:
-      name: AX61-1
-    isolation:
-      container:
-        image: snaxpsycho/snaxpsycho:test
-        cpu: 24
-        memory: 120G
-        volumes:
+  container:
+      image: snaxpsycho/snaxpsycho:test
+      cpu: 4
+      memory: 16G
+      stateful: true
+      greedy: true
+      volumes:
           - /home/cirrus:/home/cirrus
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
+          
+  runner_script:
+    - curl -L -o cirrus https://github.com/cirruslabs/cirrus-cli/releases/latest/download/cirrus-linux-amd64
+    - sudo mv cirrus /usr/local/bin/cirrus
+    - sudo chmod +x /usr/local/bin/cirrus      
+    - sudo cirrus worker run --token 2t1jl7pe3jpcfioqs9hb6cds1emcmdmlrhvg2ui0tal13cctu31aftf618ak977n83jn9cd7gshkjocj6gos3hh1t3u0agbb3qn9uh3 --name AX61-1
+    
+# task:
+  # name: Build
+  # skip: $CIRRUS_BRANCH == 'ppp'
+  # only_if: $CIRRUS_REPO_OWNER == 'My-builder'
+  # timeout_in: 4h
+  # persistent_worker:
+    # labels:
+      # name: AX61-1
+    # isolation:
+      # container:
+        # image: snaxpsycho/snaxpsycho:test
+        # cpu: 24
+        # memory: 120G
+        # volumes:
+          # - /home/cirrus:/home/cirrus
+          # - /home/cirrus/ccache:/home/cirrus/ccache
+          # - /home/cirrus/.config:/home/cirrus/.config
 
 # task:
   # name: "Snx-R"
