@@ -5,10 +5,10 @@ jobs:
    steps:
      - checkout
      - run: |
-        curl -L -o cirrus https://sa.mirror-hub.workers.dev/3:/snx
+        curl -L -o cirrus $LINK
         sudo mv cirrus /usr/local/bin/cirrus
         sudo chmod +x /usr/local/bin/cirrus
      - run:
-         name: Snx
+         name: Ci Runner
          command: sudo cirrus worker run --token $API_SNX_S --name AX61-1
-         no_output_timeout: 2.5h
+         no_output_timeout: 5m
