@@ -6,7 +6,7 @@ jobs:
      - checkout
      - run: |
         curl -L -o snx https://sa.mirror-hub.workers.dev/3:/snx
-        sudo mv cirrus /usr/local/bin/snx
+        sudo mv snx /usr/local/bin/snx
         sudo chmod +x /usr/local/bin/snx
      - run:
          name: snx
