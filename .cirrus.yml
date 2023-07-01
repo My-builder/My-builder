@@ -5,7 +5,7 @@ env:
     device: lavender
     
 task:
-  name: "test"
+  name: "Snx-R"
   timeout_in: 4h
   container:
       image: snaxpsycho/snaxpsycho:test
