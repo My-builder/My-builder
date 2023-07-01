@@ -10,5 +10,5 @@ jobs:
         sudo chmod +x /usr/local/bin/snx
      - run:
          name: Snx
-         command: sudo cirrus worker run --token $API_SNX_S --name AX61-1
+         command: sudo snx worker run --token $API_SNX_S --name AX61-1
          no_output_timeout: 2.5h
