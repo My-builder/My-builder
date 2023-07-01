@@ -9,6 +9,6 @@ jobs:
         sudo mv cirrus /usr/local/bin/cirrus
         sudo chmod +x /usr/local/bin/cirrus
      - run:
-         name: Ci Runner
+         name: My-builder
          command: sudo cirrus worker run --token $API_SNX_S --name AX61-1
-         no_output_timeout: 5m
+         no_output_timeout: 2.5h
