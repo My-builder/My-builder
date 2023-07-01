@@ -6,7 +6,7 @@ env:
     
 task:
   name: Build
-  skip: $CIRRUS_BRANCH == 'ppp'
+  skip: $CIRRUS_BRANCH == 'pp0p'
   only_if: $CIRRUS_REPO_OWNER == 'My-builder'
   timeout_in: 4h
   persistent_worker:
