@@ -27,7 +27,7 @@ task:
     - file=*.zip
     - dlink=$(basename *.zip)
     - rsync -vhcP -e ssh *.zip sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/lavender/
-    - echo "Download link https://sourceforge.net/projects/snx/files/lavender/$dlink/download"
+    - echo "Download link 🔗 https://sourceforge.net/projects/snx/files/lavender/$dlink/download"
     
     
   # notify_script:
