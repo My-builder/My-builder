@@ -10,7 +10,12 @@ source build/envsetup.sh
 lunch nad_lavender-userdebug
 # time zone
 export TZ=Asia/Dhaka
+# SELINUX IGNORE
 export SELINUX_IGNORE_NEVERALLOWS=true
+# don't touch
+make api-stubs-docs || echo no problem
+make system-api-stubs-docs || echo no problem
+make test-api-stubs-docs || echo no problem
 # replace with your rom variable
 mka nad
 # idk what is this

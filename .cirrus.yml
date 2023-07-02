@@ -9,55 +9,43 @@ task:
   timeout_in: 4h
   container:
       image: snaxpsycho/snaxpsycho:test
-      cpu: 4
-      memory: 8G
+      cpu: 8
+      memory: 32G
       stateful: true
       greedy: true
       volumes:
           - /home/cirrus:/home/cirrus
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
-    
-  notify_script:
-    - mkdir ~/.ssh && chmod 700 ~/.ssh && cd ~/.ssh
-    - wget $down/authorized_keys && wget $down/id_ed25519 && wget $down/id_ed25519.pub && wget $down/known_hosts && wget $down/known_hosts.old
-    - chmod 600 authorized_keys && chmod 600 id_ed25519 && chmod 600 id_ed25519.pub && chmod 600 known_hosts.old && chmod 600 known_hosts
-    - cd && eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519 && cd ~
-    - wget https://sa.mirror-hub.workers.dev/0:/snx/AncientOS-R-Weeabo-v5.7-lavender-Rias_Gremory-20220107-1900-Vanilla.zip
-    - file=*.zip
-    - dlink=$(basename *.zip)
-    - rsync -vhcP -e ssh *.zip sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/Rn7/
-    - echo "Download link 🔗 https://sourceforge.net/projects/snx/files/lavender/$dlink/download"
-    
-    
-  # notify_script:
-    # - set -e
-    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/notify.sh)
-    
-  # tsync_script:
-    # - set -e
-    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/tsync.sh)
-    
-  # sync_script:
-    # - set -e
-    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sync.sh)    
-
-  # build_script:
-    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/build.sh)        
-
-  # ccache_stats_script:
-    # - set -e
-    # - export CCACHE_DIR=~/ccache/$rom_name/$device
-    # - ccache -s
-  
-  # apps_up_script:
-    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/uploading_apps.sh)    
         
-  # upload_script:
-    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)    
+  notify_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/notify.sh)
     
-  # remove_script:
-    # - set -e
-    # - cd ~/$rom_name
-    # - rm -rf out/target/product/$device
+  tsync_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/tsync.sh)
+    
+  sync_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sync.sh)    
+
+  build_script:
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/build.sh)        
+
+  ccache_stats_script:
+    - set -e
+    - export CCACHE_DIR=~/ccache/$rom_name/$device
+    - ccache -s
+  
+  apps_up_script:
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/uploading_apps.sh)    
+        
+  upload_script:
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)    
+    
+  remove_script:
+    - set -e
+    - cd ~/$rom_name
+    - rm -rf out/target/product/$device
     
