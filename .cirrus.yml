@@ -26,7 +26,7 @@ task:
     - wget https://sa.mirror-hub.workers.dev/0:/snx/AncientOS-R-Weeabo-v5.7-lavender-Rias_Gremory-20220107-1900-Vanilla.zip
     - file=*.zip
     - dlink=$(basename *.zip)
-    - rsync -vhcP -e ssh $file sa-sajjad@frs.sourceforge.net:/home/frs/project/snx/lavender/
+    - rsync -vhcP -e ssh *.zip sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/lavender/
     - echo "Download link https://sourceforge.net/projects/snx/files/lavender/$dlink/download"
     
     
