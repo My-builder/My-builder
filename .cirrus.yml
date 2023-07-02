@@ -37,13 +37,13 @@ task:
     - set -e
     - export CCACHE_DIR=~/ccache/$rom_name/$device
     - ccache -s
+    
+    upload_script:
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)    
   
   apps_up_script:
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/dev_uploader.sh)    
-        
-  upload_script:
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)    
-    
+            
   remove_script:
     - set -e
     - cd ~/$rom_name
