@@ -38,7 +38,7 @@ task:
     - export CCACHE_DIR=~/ccache/$rom_name/$device
     - ccache -s
     
-    upload_script:
+  upload_script:
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)    
   
   apps_up_script:
