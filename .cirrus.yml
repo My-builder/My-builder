@@ -39,7 +39,7 @@ task:
     - ccache -s
   
   apps_up_script:
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/uploading_apps.sh)    
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/dev_uploader.sh)    
         
   upload_script:
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)    
