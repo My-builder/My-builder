@@ -5,18 +5,34 @@ env:
     device: lavender
     
 task:
-  name: "Snx-R"
+  name: Build
   timeout_in: 4h
-  container:
-      image: snaxpsycho/snaxpsycho:test
-      cpu: 8
-      memory: 32G
-      stateful: true
-      greedy: true
-      volumes:
-          - /home/cirrus:/home/cirrus
+  persistent_worker:
+    labels:
+      name: AX61-1
+    isolation:
+      container:
+        image: snaxpsycho/snaxpsycho:test
+        cpu: 24
+        memory: 120G
+        volumes:
+          - /home/cirrus/roms:/home/cirrus/roms
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
+    
+# task:
+  # name: "Snx-R"
+  # timeout_in: 4h
+  # container:
+      # image: snaxpsycho/snaxpsycho:test
+      # cpu: 8
+      # memory: 32G
+      # stateful: true
+      # greedy: true
+      # volumes:
+          # - /home/cirrus:/home/cirrus
+          # - /home/cirrus/ccache:/home/cirrus/ccache
+          # - /home/cirrus/.config:/home/cirrus/.config
         
   notify_script:
     - set -e
