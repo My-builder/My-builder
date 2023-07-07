@@ -1,4 +1,4 @@
-# add repo, dt, vt, kt etc...
+# add repo, dt, vt, kt etc..
 repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b snx-final -g default,-mips,-darwin,-notdefault
 # repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b Sa-Sajjad-patch-1 -g default,-mips,-darwin,-notdefault
 # replace with your manifest
