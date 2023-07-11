@@ -1,3 +1,2 @@
 # My-builder
-#Snx-R
-6# TEST
+#Snx-R6# TEST
