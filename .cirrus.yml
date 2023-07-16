@@ -9,8 +9,8 @@ task:
   timeout_in: 4h
   container:
       image: snaxpsycho/snaxpsycho:test
-      cpu: 8
-      memory: 32G
+      cpu: 2
+      memory: 4G
       stateful: true
       greedy: true
       volumes:
@@ -20,32 +20,35 @@ task:
         
   notify_script:
     - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/notify.sh)
+    - git clone https://millerbarbara0009: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@github.com/millerbarbara0009/mirror -b main snx && cd snx
+    - docker container prune --force || true
+    - docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t mirror-bot
+    - docker image ls
     
-  tsync_script:
-    - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/tsync.sh)
+  # tsync_script:
+    # - set -e
+    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/tsync.sh)
     
-  sync_script:
-    - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sync.sh)    
+  # sync_script:
+    # - set -e
+    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sync.sh)    
 
-  build_script:
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/build.sh)        
+  # build_script:
+    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/build.sh)        
 
-  ccache_stats_script:
-    - set -e
-    - export CCACHE_DIR=~/ccache/$rom_name/$device
-    - ccache -s
+  # ccache_stats_script:
+    # - set -e
+    # - export CCACHE_DIR=~/ccache/$rom_name/$device
+    # - ccache -s
     
-  upload_script:
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)    
+  # upload_script:
+    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)    
   
-  apps_up_script:
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/upload_apps.sh)    
+  # apps_up_script:
+    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/upload_apps.sh)    
             
-  remove_script:
-    - set -e
-    - cd ~/$rom_name
-    - rm -rf out/target/product/$device
+  # remove_script:
+    # - set -e
+    # - cd ~/$rom_name
+    # - rm -rf out/target/product/$device
     
