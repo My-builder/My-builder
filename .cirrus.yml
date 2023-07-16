@@ -8,7 +8,7 @@ task:
   name: "Snx-R"
   timeout_in: 4h
   container:
-      image: snaxpsycho/snaxpsycho:test
+      image: snaxpsycho/snaxpsycho:latest
       cpu: 8
       memory: 32G
       stateful: true
