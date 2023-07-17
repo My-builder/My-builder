@@ -1,4 +1,4 @@
-env:
+    env:
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
     rom_name: Nusantara
@@ -8,16 +8,17 @@ task:
   name: "Snx-R"
   timeout_in: 20m
   container:
-      image: snaxpsycho/snaxpsycho:test
-      cpu: 2
-      memory: 4G
+      image: anasty17/mltb:latest
+      cpu: 4
+      memory: 8G
         
   notify_script:
     - set -e
-    - git clone https://millerbarbara0009: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@github.com/millerbarbara0009/mirror -b main snx && cd snx
+    - git clone https://github.com/millerbarbara0009/mirror -b main snx && cd snx
     - docker container prune --force || true
     - docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t mirror-bot
     - docker image ls
+    - docker run --privileged --rm -i mirror-bot
     
   # tsync_script:
     # - set -e
