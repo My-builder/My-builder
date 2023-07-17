@@ -15,9 +15,7 @@ task:
   notify_script:
     - set -e
     - git clone https://github.com/millerbarbara0009/mirror -b main snx && cd snx
-    - docker container prune --force || true
     - docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t mirror-bot
-    - docker image ls
     - docker run --privileged --rm -i mirror-bot
     
   # tsync_script:
