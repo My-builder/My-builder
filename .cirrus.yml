@@ -22,9 +22,9 @@ task:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/notify.sh)
     
-  tsync_script:
-    - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/tsync.sh)
+  # tsync_script:
+    # - set -e
+    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/tsync.sh)
     
   sync_script:
     - set -e
