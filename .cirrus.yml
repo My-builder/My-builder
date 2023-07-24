@@ -29,7 +29,7 @@ task:
   vanilla_build_script:
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/build.sh)
         
-  upload_script:
+  vanilla_up_script:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
     
@@ -37,7 +37,7 @@ task:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/gapps_build.sh)
     
-  g_upload_script:
+  gapps_up_script:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
   
