@@ -24,21 +24,26 @@ task:
     
   sync_script:
     - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sync.sh)    
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sync.sh)
 
-  build_script:
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/build.sh)        
-
-  ccache_stats_script:
-    - set -e
-    - export CCACHE_DIR=~/ccache/$rom_name/$device
-    - ccache -s
-    
+  vanilla_build_script:
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/build.sh)
+        
   upload_script:
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)    
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
+    
+  gapps_build_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/gapps_build.sh)
+    
+  g_upload_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
   
   apps_up_script:
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/upload_apps.sh)    
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/upload_apps.sh)
             
   remove_script:
     - set -e
