@@ -16,3 +16,7 @@ Download Link: <a href='https://sourceforge.net/projects/snx-r/files/Rn7/$dlink/
 
 
 ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=$tg_id" -d "parse_mode=HTML"
+rm -rf $file
+rm -rf $file
+rm -rf $file
+rm -rf $file
