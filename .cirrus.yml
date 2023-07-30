@@ -33,13 +33,13 @@ task:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
     
-  # gapps_build_script:
-    # - set -e
-    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/gapps_build.sh)
+  gapps_build_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/gapps_build.sh)
     
-  # gapps_up_script:
-    # - set -e
-    # - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
+  gapps_up_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
   
   apps_up_script:
     - set -e
