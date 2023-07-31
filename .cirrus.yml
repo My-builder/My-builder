@@ -49,8 +49,8 @@ task:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
               
-  remove_script:
-    - set -e
-    - cd ~/$rom_name
-    - rm -rf out/target/product/$device
+  # remove_script:
+    # - set -e
+    # - cd ~/$rom_name
+    # - rm -rf out/target/product/$device
     
