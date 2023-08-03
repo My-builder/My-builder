@@ -12,6 +12,7 @@ lunch nad_lavender-userdebug
 export TZ=Asia/Dhaka
 # SELINUX IGNORE
 export SELINUX_IGNORE_NEVERALLOWS=true
+export NAD_BUILD_TYPE=Snx-Addition
 # don't touch
 make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
