@@ -29,13 +29,14 @@ task:
   vanilla_build_script:
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/build.sh)
         
-  apps_up_script:
-    - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/upload_apps.sh)
-  
   vanilla_up_script:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
+    
+  apps_up_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/upload_apps.sh)
+
     
   # gapps_build_script:
     # - set -e

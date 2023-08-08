@@ -4,7 +4,7 @@ zip SystemUI.zip SystemUI.apk
 bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/dev_uploader.sh) -f *.zip
 cd ..
 cd Settings
-zip SystemUI.zip SystemUI.apk 
+zip Settings.zip Settings.apk 
 bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/dev_uploader.sh) -f *.zip
 # cd ..
 # cd ..
