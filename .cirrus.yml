@@ -24,7 +24,7 @@ task:
     
   sync_script:
     - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sync2.sh)
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/sync.sh)
 
   vanilla_build_script:
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/build.sh)

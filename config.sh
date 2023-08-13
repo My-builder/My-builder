@@ -1,9 +1,9 @@
 # add repo, dt, vt, kt etc..
-# repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b 10 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b 10 -g default,-mips,-darwin,-notdefault
 # replace with your manifest
-# git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b 1 .repo/local_manifests
+git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp .repo/local_manifests
 # sync script
-# repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 source build/envsetup.sh
 # replace with your rom variable
