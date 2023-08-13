@@ -22,7 +22,7 @@ task:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/notify.sh)
     
-  sync_script:
+  dt_sync_script:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/$CIRRUS_BRANCH/snx/dt_sync.sh)
   
