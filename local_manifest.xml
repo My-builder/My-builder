@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+ <!-- Remotes -->
+    <remote name="sa2"
+            fetch="ssh://git@github.com/Sa-Sajjad/"
+            clone-depth="1" />
+ <!-- Trees & Extra -->
+ <project path="device/xiaomi/lavender" name="device_xiaomi_lavender" remote="sa2" revision="hmp" />
+ <project path="vendor/xiaomi/lavender" name="vendor_xiaomi_lavender" remote="sa2" revision="hmp />
+ <project path="kernel/xiaomi/lavender" name="kernel_xiaomi_lavender" remote="sa2" revision="hmp" />
+ </manifest>
