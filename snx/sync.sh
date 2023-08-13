@@ -1,6 +1,6 @@
 mkdir ~/$rom_name
 cd ~/$rom_name
 rm -rf .repo/local_manifests
-command=$(head $CIRRUS_WORKING_DIR/config.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/config.sh -n | cut -f1 -d:) - 1))
-only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/config.sh)
-bash -c "$command" || true
+repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b 10 -g default,-mips,-darwin,-notdefault
+git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b 1 .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
