@@ -1,8 +1,5 @@
-# Snx-R
-fuk
-
-name=$(basename *.zip)
 ZIP=$(echo *.zip)
+name=$(basename *.zip)
 curl -F document=@$ZIP "https://api.telegram.org/bot${bot_api}/sendDocument" \
 -F chat_id="$tg_id" \
 -F "disable_web_page_preview=true" \
