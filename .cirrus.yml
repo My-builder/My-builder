@@ -6,7 +6,7 @@ env:
     
 task:
   name: "Snx-R"
-  skip: $CIRRUS_BRANCH == 'main'
+  # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 4h
   container:
       image: snaxpsycho/cirrus:latest
@@ -34,9 +34,9 @@ task:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
     
-  # apps_up_script:
-    # - set -e
-    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/upload_apps.sh)
+  apps_up_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/upload_apps.sh)
 
   # gapps_build_script:
     # - set -e
@@ -45,19 +45,3 @@ task:
   # gapps_up_script:
     # - set -e
     # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
-
-
-task:
-  name: "Snx-R test"
-  timeout_in: 20m
-  container:
-      image: snaxpsycho/cirrus:latest
-      cpu: 2
-      memory: 4G
-        
-  notify_script:
-    - set -e
-    - mkdir snx && cd snx
-    - wget https://sa.mirror-hub.workers.dev/0:/snx/bootanimation.zip
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/test.sh)
-    
