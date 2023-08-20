@@ -1,2 +1,1 @@
 # Snx-R
-fuk
