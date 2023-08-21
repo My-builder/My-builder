@@ -1,3 +1,5 @@
+wget https://sa.mirror-hub.workers.dev/0:/snx/Gapps%20Trash%20Mod.zip
+
 curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=
 ◦•●◉✿ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ✿◉●•◦
       
