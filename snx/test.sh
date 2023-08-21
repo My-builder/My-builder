@@ -8,7 +8,7 @@ curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=
 
 File Name: <code>snx</code>
 
-Total Size: $(du -sh *.zip | cut -d - -f 1)
+Total Size: $(du -sh *.zip)
 
 Time Took: $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s).
 
