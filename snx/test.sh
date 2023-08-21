@@ -1,5 +1,5 @@
 START=$(date +"%s")
-wget https://sa.mirror-hub.workers.dev/0:/snx/Corvus_v4.7-lavender-03052020-OFFICIAL-1437.zip
+wget https://sa.mirror-hub.workers.dev/0:/snx/Nusantara_eLTS-10-lavender-25092022-NubXD-1601.zip
 END=$(date +"%s")
 DIFF=$(($END - $START))
 
