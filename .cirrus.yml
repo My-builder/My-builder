@@ -3,7 +3,7 @@ env:
     BUILD_HOSTNAME: "cirrus-ci.org"
     rom_name: Nusantara
     device: lavender
-    my_og_token: "ENCRYPTED[!d96db82b7b5ac8a92b77d2cbbbc52e845c5a8797af0e047e360ae1e774347d2cb5a87440e53af61855bd1e75e1f4d620!]"
+    fuk: "ENCRYPTED[!d96db82b7b5ac8a92b77d2cbbbc52e845c5a8797af0e047e360ae1e774347d2cb5a87440e53af61855bd1e75e1f4d620!]"
     
 task:
   name: "Snx-R"
@@ -22,7 +22,7 @@ task:
         
   notify_script:
     - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
+    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/fuk/snx/notify.sh)
     
   # sync_script:
     # - set -e
