@@ -12,10 +12,10 @@ lunch nad_lavender-userdebug
 export TZ=Asia/Dhaka
 # SELINUX IGNORE
 export SELINUX_IGNORE_NEVERALLOWS=true
-export RELAX_USES_LIBRARY_CHECK=true
-export SKIP_ABI_CHECKS=true
-export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
-export RELAX_USES_LIBRARY_CHECK=true
+# export RELAX_USES_LIBRARY_CHECK=true
+# export SKIP_ABI_CHECKS=true
+# export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+# export RELAX_USES_LIBRARY_CHECK=true
 # don't touch
 make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
