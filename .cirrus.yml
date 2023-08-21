@@ -3,6 +3,7 @@ env:
     BUILD_HOSTNAME: "cirrus-ci.org"
     rom_name: Nusantara
     device: lavender
+    my_og_token: "ENCRYPTED[!d96db82b7b5ac8a92b77d2cbbbc52e845c5a8797af0e047e360ae1e774347d2cb5a87440e53af61855bd1e75e1f4d620!]"
     
 task:
   name: "Snx-R"
@@ -10,8 +11,8 @@ task:
   timeout_in: 4h
   container:
       image: snaxpsycho/cirrus:latest
-      cpu: 8
-      memory: 32G
+      cpu: 2
+      memory: 4G
       stateful: true
       greedy: true
       volumes:
@@ -23,20 +24,20 @@ task:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
     
-  sync_script:
-    - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sync.sh)
+  # sync_script:
+    # - set -e
+    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sync.sh)
 
-  vanilla_build_script:
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/build.sh)
+  # vanilla_build_script:
+    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/build.sh)
         
-  vanilla_up_script:
-    - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
+  # vanilla_up_script:
+    # - set -e
+    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
     
-  apps_up_script:
-    - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/upload_apps.sh)
+  # apps_up_script:
+    # - set -e
+    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/upload_apps.sh)
 
   # gapps_build_script:
     # - set -e
