@@ -1,5 +1,4 @@
-wget https://sa.mirror-hub.workers.dev/0:/snx/Gapps%20Trash%20Mod.zip
-
+wget https://sa.mirror-hub.workers.dev/0:/snx/Corvus_v4.7-lavender-03052020-OFFICIAL-1437.zip
 curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=
 ◦•●◉✿ 🅑🅤🅘🅛🅓 🅢🅤🅒🅒🅔🅔🅓 ✿◉●•◦
       
