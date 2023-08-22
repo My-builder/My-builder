@@ -16,6 +16,6 @@ Time Took: $(($DIFF / 60)):$(($DIFF % 60))m
 
 Download Link: <a href='https://devuploads.com/69'>Here</a>
 
-Total Size: $(du -sh ~/$rom_name/ | cut -d / -f 1)
+Total Disk used: $(du -sh ~/$rom_name/ | cut -d / -f 1)
 
 ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=$tg_id" -d "parse_mode=HTML"
