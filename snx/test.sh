@@ -8,10 +8,12 @@ curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=
 
 File Name: <code>snx</code>
 
-Total Size: $(du -sh *.zip | cut -d N -f 1)
+File Size: $(du -sh *.zip | cut -d a -f 1 | cut -d e -f 1 | cut -d i -f 1 | cut -o N -f 1 | cut -d u -f 1)
 
 Time Took: $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s).
 
 Download Link: <a href='https://devuploads.com/69'>Here</a>
+
+Total Size: $(du -sh  ~/$rom_name/ | cut -d - -f 1 | cut -d / -f 1 | cut -d _ -f )
 
 ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=$tg_id" -d "parse_mode=HTML"
