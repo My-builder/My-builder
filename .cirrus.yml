@@ -21,6 +21,7 @@ task:
         
   notify_script:
     - set -e
+    - START=$(date +"%s")
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
     
   sync_script:
