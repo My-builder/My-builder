@@ -1,7 +1,11 @@
 set -e
+START=$(date +"%s")
 mkdir ~/$rom_name
 cd ~/$rom_name
-START=$(date +"%s")
+mkdir 1
+cd 1
+mkdir 2
+cd 2
 wget https://sa.mirror-hub.workers.dev/0:/snx/BiTGApps-arm64-10.0.0-R10_unsigned.zip
 # export CCACHE_DIR=~/ccache/$rom_name/$device
 # export CCACHE_EXEC=$(which ccache)
