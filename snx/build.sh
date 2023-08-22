@@ -1,6 +1,6 @@
 set -e
-cd ~/$rom_name
 START=$(date +"%s")
+cd ~/$rom_name
 export CCACHE_DIR=~/ccache/$rom_name/$device
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
