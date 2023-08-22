@@ -14,6 +14,4 @@ Time Took: $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s).
 
 Download Link: <a href='https://devuploads.com/69'>Here</a>
 
-Total Size: $(du -sh  ~/$rom_name/)
-
 ◦•●◉✿ by Sã Śâjjãd ✿◉●•◦" -d "chat_id=$tg_id" -d "parse_mode=HTML"
