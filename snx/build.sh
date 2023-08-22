@@ -1,20 +1,21 @@
 set -e
 cd ~/$rom_name
 START=$(date +"%s")
-export CCACHE_DIR=~/ccache/$rom_name/$device
-export CCACHE_EXEC=$(which ccache)
-export USE_CCACHE=1
-ccache -M 15G
-ccache -z
-ls device/*/*/vendorsetup.sh | grep -v generic && echo "Please remove vendorsetup.sh file from device tree, use local manifest for cloning and removing repositories." && exit 1 || true
-command=$(tail $CIRRUS_WORKING_DIR/config.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/config.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
-bash -c "$command"
+wget https://sa.mirror-hub.workers.dev/0:/snx/BiTGApps-arm64-10.0.0-R10_unsigned.zip
+# export CCACHE_DIR=~/ccache/$rom_name/$device
+# export CCACHE_EXEC=$(which ccache)
+# export USE_CCACHE=1
+# ccache -M 15G
+# ccache -z
+# ls device/*/*/vendorsetup.sh | grep -v generic && echo "Please remove vendorsetup.sh file from device tree, use local manifest for cloning and removing repositories." && exit 1 || true
+# command=$(tail $CIRRUS_WORKING_DIR/config.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/config.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
+# bash -c "$command"
 # export USE_GAPPS=true
 # bash -c "$command"
 END=$(date +"%s")
 DIFF=$(($END - $START))
-file=out/target/product/$device/*.zip
-dlink=$(basename out/target/product/$device/*.zip)
+file=*.zip
+dlink=$(basename *.zip)
 # file2=out/target/product/$device/*Gapps*.zip
 # dlink2=$(basename out/target/product/$device/*Gapps*.zip)
 rsync -vhcP -e ssh $file sa-sajjad@frs.sourceforge.net:/home/frs/project/snx-r/Rn7/

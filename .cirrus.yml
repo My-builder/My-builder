@@ -30,9 +30,9 @@ task:
   vanilla_build_script:
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/build.sh)
     
-  apps_up_script:
-    - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/upload_apps.sh)
+  # apps_up_script:
+    # - set -e
+    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/upload_apps.sh)
     
   # gapps_build_script:
     # - set -e
