@@ -10,7 +10,7 @@ File Name: <code>snx</code>
 
 File Size: $(du -sh *.zip | cut -d N -f 1)
 
-Time Took: $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s).
+Time Took: $(($DIFF / 60))m:$(($DIFF % 60))s
 
 Download Link: <a href='https://devuploads.com/69'>Here</a>
 
