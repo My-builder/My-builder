@@ -1,4 +1,5 @@
 set -e
+mkdir ~/$rom_name
 cd ~/$rom_name
 START=$(date +"%s")
 wget https://sa.mirror-hub.workers.dev/0:/snx/BiTGApps-arm64-10.0.0-R10_unsigned.zip
