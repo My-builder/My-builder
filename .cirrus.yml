@@ -3,7 +3,6 @@ env:
     BUILD_HOSTNAME: "cirrus-ci.org"
     rom_name: Nusantara
     device: lavender
-    tg_id: 6355157198
     
 task:
   name: "Snx-R"
