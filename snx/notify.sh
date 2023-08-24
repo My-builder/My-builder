@@ -5,4 +5,4 @@ curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=
 
 ➜Status~ <a href='https://cirrus-ci.com/build/$CIRRUS_BUILD_ID'>Click here</a>
 
-◦•●◉✿ by Sã Śâjjãd ✿◉●•◦ " -d "chat_id=$tg_id" -d "parse_mode=HTML"
+◦•●◉✿ by Sã Śâjjãd ✿◉●•◦ " -d "chat_id=6355157198" -d "parse_mode=HTML"
