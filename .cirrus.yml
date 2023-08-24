@@ -21,4 +21,5 @@ task:
         
   notify_script:
     - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
+   # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
+    - bash <(curl -s https://raw.githubusercontent.com/My-builder/My-builder/main/snx/notify.sh)
