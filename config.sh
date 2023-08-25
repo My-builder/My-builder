@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-bu
 # replace with your manifest
 git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b fuk .repo/local_manifests
 # sync script
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+# repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 source build/envsetup.sh
 # replace with your rom variable
