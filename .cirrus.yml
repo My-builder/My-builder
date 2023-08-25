@@ -7,7 +7,7 @@ env:
 task:
   name: "Snx-R"
   # skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'My-Builder'
+  only_if: $CIRRUS_REPO_OWNER == 'My-builder'
   timeout_in: 4h
   container:
       image: snaxpsycho/cirrus:latest
