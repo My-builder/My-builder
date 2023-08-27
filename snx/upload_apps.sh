@@ -10,7 +10,7 @@ cd ..
 cd ..
 cd ..
 cd framework
-zip framework-res.apk Android.zip
+zip framework-res.zip framework-res.apk
 bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/tg_uploader.sh)
 # bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/dev_uploader.sh) -f framework.jar
     

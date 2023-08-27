@@ -25,9 +25,9 @@ curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=
       
 ➜Name: <code>$dlink</code>
 
-➜Size: $(du -sh $file | cut -d N -f 1)
+➜Size: $(du -sh $file | cut -d N -f 1 | cut -d / -f 4 | cut -d - -f 1 | cut -d a -f 1 | cut -d e -f 1 | cut -d i -f 1 | cut -d o -f 1 | cut -d u -f 1)
 
-➜Time Took: $(($DIFF / 60)) Min $(($DIFF % 60)) Sec
+➜Time Took: <code>$(($DIFF / 60))Min $(($DIFF % 60))Sec</code>
 
 ➜Download Link: <a href='$link'>Vanilla</a>
 
