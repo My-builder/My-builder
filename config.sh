@@ -1,4 +1,4 @@
-# add repo, dt, vt, kt etc..
+# add repo, dt, vt, kt etc.
 repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b battery -g default,-mips,-darwin,-notdefault
 # replace with your manifest
 git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests

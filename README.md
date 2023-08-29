@@ -1,1 +1,1 @@
-# Snx-R wth
+# Snx-R
