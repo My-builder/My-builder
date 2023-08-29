@@ -1,5 +1,5 @@
 env:
-    CIRRUS_CLONE_DEPTH: 1
+    CIRRUS_CLONE_DEPTH: 2
     BUILD_HOSTNAME: "cirrus-ci.org"
     rom_name: Nusantara
     device: lavender
