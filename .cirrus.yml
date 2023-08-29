@@ -38,6 +38,6 @@ task:
     # - set -e
     # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/gapps_build.sh)
     
-  # gapps_up_script:
+  # fugapps_up_script:
     # - set -e
     # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sfg_uploader.sh)
