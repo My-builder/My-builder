@@ -10,7 +10,7 @@ task:
   timeout_in: 4h
   container:
       image: snaxpsycho/cirrus:latest
-      cpu: 8
+      cpu: 6
       memory: 32G
       stateful: true
       greedy: true
