@@ -11,7 +11,7 @@ task:
   container:
       image: snaxpsycho/cirrus:latest
       cpu: 6
-      memory: 32G
+      memory: 24G
       stateful: true
       greedy: true
       volumes:
