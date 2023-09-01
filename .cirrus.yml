@@ -22,7 +22,9 @@ task:
     
   notify_script:
     - set -e
-    - apt install curl -y
+    - apt update
+    - apt install sudo
+    - sudo apt update -y && sudo apt install git aria2 openssh curl wget rsync zip unzip lzma cpio ccache clang -y
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/main/snx/tsync.sh)
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/main/snx/notify.sh)
     
