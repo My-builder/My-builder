@@ -19,23 +19,20 @@ task:
           - /home/cirrus:/home/cirrus
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
-        
+    
   notify_script:
     - set -e
-    - bash fuk.sh
+    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/tsync.sh)
+    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
     
+  sync_script:
+    - set -e
+    - repo init -u https://Sa-Sajjad:$ght@github.com/android_manifest_nusa -b 10
+    - git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
+    - repo sync -c --force-sync --no-tags --no-clone-bundle
     
-  # notify_script:
-    # - set -e
-    # - sudo apt update -y && sudo apt install git
-    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
-    
-  # sync_script:
-    # - set -e
-    # - repo sync -c --force-sync --no-tags --no-clone-bundle
-    
-  # vanilla_build_script:
-    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/build.sh)
+  vanilla_build_script:
+    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/build.sh)
     
   # apps_up_script:
     # - set -e
