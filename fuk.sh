@@ -7,9 +7,9 @@ cd
 # mkdir ~/bin
 # PATH=~/bin:$PATH
 # cd ~/bin
-sudo apt-get install repo
+sudo apt-get install repo -y
 cd
-git clone https://github.com/akhilnarang/scripts
-bash scripts/setup/android_build_env.sh
+git clone https://github.com/akhilnarang/scripts snx
+bash snx/setup/android_build_env.sh
 mkdir $rom_name
 cd $rom_name
