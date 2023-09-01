@@ -13,12 +13,12 @@ task:
       # image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
-      # stateful: true
-      # greedy: true
-      # volumes:
-          # - /home/cirrus:/home/cirrus
-          # - /home/cirrus/ccache:/home/cirrus/ccache
-          # - /home/cirrus/.config:/home/cirrus/.config
+      stateful: true
+      greedy: true
+      volumes:
+          - /home/cirrus:/home/cirrus
+          - /home/cirrus/ccache:/home/cirrus/ccache
+          - /home/cirrus/.config:/home/cirrus/.config
         
   notify_script:
     - set -e
