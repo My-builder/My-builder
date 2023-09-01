@@ -26,9 +26,10 @@ task:
     
   sync_script:
     - set -e
-    - rm -rf ~/bin/repo
-    - curl https://storage.googleapis.com/git-repo-downloads/repo-2.36 > ~/bin/repo
-    - chmod a+x ~/bin/repo
+    - sudo apt-get install repo
+    # - rm -rf ~/bin/repo
+    # - curl https://storage.googleapis.com/git-repo-downloads/repo-2.36 > ~/bin/repo
+    # - chmod a+x ~/bin/repo
     - repo init -u https://github.com/S-A-build/android_manifest_nusa -b 10
     - repo sync -c --force-sync --no-tags --no-clone-bundle
     # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sync.sh)
