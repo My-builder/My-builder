@@ -11,5 +11,9 @@ sudo apt-get install repo -y
 cd
 git clone https://github.com/akhilnarang/scripts snx
 bash snx/setup/android_build_env.sh
-mkdir $rom_name
-cd $rom_name
+mkdir ~/$rom_name
+cd ~/$rom_name
+rm -rf .repo/local_manifests
+repo init -u https://Sa-Sajjad:$ght@github.com/android_manifest_nusa -b 10
+git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
+repo sync -c --force-sync --no-tags --no-clone-bundle
