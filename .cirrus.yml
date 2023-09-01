@@ -26,6 +26,7 @@ task:
     
   sync_script:
     - set -e
+    - wget https://github.com/Nub-XD/roms-cache/releases/download/Havoc-OS-Revived-santoni/Havoc-OS-Revived-eleven_ccache.zip.001
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sync.sh)
 
   vanilla_build_script:
