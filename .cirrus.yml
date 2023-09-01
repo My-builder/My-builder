@@ -9,7 +9,8 @@ task:
   # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 4h
   container:
-      image: snaxpsycho/cirrus:latest
+      image: ubuntu:latest
+      # image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
       # stateful: true
