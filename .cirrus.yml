@@ -10,17 +10,18 @@ task:
   timeout_in: 4h
   container:
       image: snaxpsycho/cirrus:latest
-      cpu: 6
-      memory: 24G
-      stateful: true
-      greedy: true
-      volumes:
-          - /home/cirrus:/home/cirrus
-          - /home/cirrus/ccache:/home/cirrus/ccache
-          - /home/cirrus/.config:/home/cirrus/.config
+      cpu: 8
+      memory: 32G
+      # stateful: true
+      # greedy: true
+      # volumes:
+          # - /home/cirrus:/home/cirrus
+          # - /home/cirrus/ccache:/home/cirrus/ccache
+          # - /home/cirrus/.config:/home/cirrus/.config
         
   notify_script:
     - set -e
+    - sudo apt update -y && sudo apt install git
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
     
   sync_script:
