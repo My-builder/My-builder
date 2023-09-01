@@ -8,9 +8,8 @@ cd
 # PATH=~/bin:$PATH
 # cd ~/bin
 sudo apt-get install repo
-chmod a+x ~/bin/repo
-git clone https://github.com/akhilnarang/scripts.git scripts
-cd scripts
-bash setup/android_build_env.sh
+cd
+git clone https://github.com/akhilnarang/scripts
+bash scripts/setup/android_build_env.sh
 mkdir $rom_name
 cd $rom_name
