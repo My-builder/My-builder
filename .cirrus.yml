@@ -26,7 +26,7 @@ task:
     
   sync_script:
     - set -e
-    - sudo apt-get install repo
+    - sudo apt-get install repo -y
     # - rm -rf ~/bin/repo
     # - curl https://storage.googleapis.com/git-repo-downloads/repo-2.36 > ~/bin/repo
     # - chmod a+x ~/bin/repo
