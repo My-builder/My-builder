@@ -9,8 +9,7 @@ task:
   # skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 4h
   container:
-      image: ubuntu:latest
-      # image: snaxpsycho/cirrus:latest
+      image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
       stateful: true
@@ -22,24 +21,18 @@ task:
         
   notify_script:
     - set -e
-    - bash fuk.sh
+    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
     
+  sync_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sync.sh)
+
+  vanilla_build_script:
+    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/build.sh)
     
-  # notify_script:
-    # - set -e
-    # - sudo apt update -y && sudo apt install git
-    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
-    
-  # sync_script:
-    # - set -e
-    # - repo sync -c --force-sync --no-tags --no-clone-bundle
-    
-  # vanilla_build_script:
-    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/build.sh)
-    
-  # apps_up_script:
-    # - set -e
-    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/upload_apps.sh)
+  apps_up_script:
+    - set -e
+    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/upload_apps.sh)
     
   # gapps_build_script:
     # - set -e
