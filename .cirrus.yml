@@ -22,7 +22,7 @@ task:
     
   notify_script:
     - set -e
-    - sudo apt install curl -y
+    - apt install curl -y
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/main/snx/tsync.sh)
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/main/snx/notify.sh)
     
