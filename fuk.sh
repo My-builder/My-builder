@@ -15,6 +15,6 @@ chmod 600 authorized_keys && chmod 600 id_ed25519 && chmod 600 id_ed25519.pub &&
 cd && eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519 && cd ~
 mkdir ~/$rom_name
 cd ~/$rom_name
-repo init -u https://Sa-Sajjad:$ght@github.com/android_manifest_nusa -b 10
-git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
+repo init -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa -b 10
+# git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
 repo sync -c --force-sync --no-tags --no-clone-bundle

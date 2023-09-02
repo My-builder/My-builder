@@ -22,20 +22,21 @@ task:
     
   notify_script:
     - set -e
-    - apt update
-    - apt install sudo
-    - sudo apt update -y && sudo apt install git aria2 curl wget rsync zip unzip lzma cpio ccache clang -y
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/main/snx/tsync.sh)
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/main/snx/notify.sh)
+    - bash fuk.sh
+    # - apt update
+    # - apt install sudo
+    # - sudo apt update -y && sudo apt install git aria2 curl wget rsync zip unzip lzma cpio ccache clang -y
+    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/main/snx/tsync.sh)
+    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/main/snx/notify.sh)
     
-  sync_script:
-    - set -e
-    - repo init -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa -b 10
-    - git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
-    - repo sync -c --force-sync --no-tags --no-clone-bundle
+  # sync_script:
+    # - set -e
+    # - repo init -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa -b 10
+    # - git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
+    # - repo sync -c --force-sync --no-tags --no-clone-bundle
     
-  vanilla_build_script:
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/main/snx/build.sh)
+  # vanilla_build_script:
+    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/main/snx/build.sh)
     
   # apps_up_script:
     # - set -e
