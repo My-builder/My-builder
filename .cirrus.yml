@@ -25,8 +25,11 @@ task:
  
   notify0_script:
     - set -e
-    - rm -rf ~/.bin/repo
-    - curl https://android.googlesource.com/tools/repo/+/refs/tags/v2.36.1/repo > snx && mv snx ~/.bin/repo
+    - rm -rf ~/.bin
+    - mkdir ~/bin
+    - PATH=~/bin:$PATH
+    - cd ~/bin
+    - curl https://android.googlesource.com/tools/repo/+/refs/tags/v2.36.1/repo > ~/.bin/repo
     - chmod a+rx ~/.bin/repo
     
   notify1_script:
