@@ -23,9 +23,21 @@ task:
     - set -e
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/notify.sh)
     
-  sync_script:
+  notify1_script:
     - set -e
-    - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sync.sh)
+    - repo init --depth=1 --no-repo-verify -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa.git -b battery -g default,-mips,-darwin,-notdefault
+    
+  notify2_script:
+    - set -e
+    - git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
+  
+  notify3_script:
+    - set -e
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+    
+  # sync_script:
+    # - set -e
+    # - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/sync.sh)
 
   vanilla_build_script:
     - bash <(curl -s https://raw.githubusercontent.com/$CIRRUS_REPO_FULL_NAME/$CIRRUS_BRANCH/snx/build.sh)
