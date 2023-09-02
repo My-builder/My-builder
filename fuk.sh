@@ -9,12 +9,8 @@ cd
 git clone https://github.com/akhilnarang/scripts snx
 bash snx/setup/android_build_env.sh
 cd ~
-mkdir ~/.ssh && chmod 700 ~/.ssh && cd ~/.ssh
-wget $down/authorized_keys && wget $down/id_ed25519 && wget $down/id_ed25519.pub && wget $down/known_hosts && wget $down/known_hosts.old
-chmod 600 authorized_keys && chmod 600 id_ed25519 && chmod 600 id_ed25519.pub && chmod 600 known_hosts.old && chmod 600 known_hosts
-cd && eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519 && cd ~
 mkdir ~/$rom_name
 cd ~/$rom_name
 repo init -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa -b 10
-# git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b hmp2 .repo/local_manifests
-repo sync -c --force-sync --no-tags --no-clone-bundle
+git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten .repo/local_manifests
+repo sync

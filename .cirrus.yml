@@ -9,8 +9,8 @@ task:
   # skip: main == 'main'
   timeout_in: 4h
   container:
-      image: ubuntu:22.04
-      # image: snaxpsycho/cirrus:latest
+      # image: ubuntu:22.04
+      image: snaxpsycho/cirrus:latest
       cpu: 8
       memory: 32G
       stateful: true
