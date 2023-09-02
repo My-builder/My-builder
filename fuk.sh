@@ -11,8 +11,7 @@ bash snx/setup/android_build_env.sh
 cd ~
 mkdir ~/$rom_name
 cd ~/$rom_name
-sudo apt-get install gpg
-rm -rf ~/.repoconfig
 repo init -u https://Sa-Sajjad:$ght@github.com/S-A-build/android_manifest_nusa -b 10
+repo sync
 git clone git@github.com:Sa-Sajjad/manifest.git --depth 1 -b ten .repo/local_manifests
 repo sync
